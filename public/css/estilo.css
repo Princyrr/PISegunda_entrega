@@ -1,64 +1,113 @@
+/* Estilo geral */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(#6AFCD9, #42907E);
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #6AFCD9, #42907E);
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* Centraliza verticalmente */
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
-.form-container {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Container principal */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  overflow-y: auto;
+  /* Permite rolagem se necessário */
   padding: 20px;
-  width: 350px;
+  box-sizing: border-box;
+}
+
+/* Container do formulário */
+.form-container {
+  display: block;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  margin-left: 30px;
+  padding: 20px;
+  width: 100%;
+  height: 70%;
+  max-width: 400px;
+  /* Define largura máxima */
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .form-container h2 {
   text-align: center;
   color: #00796b;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
+/* Grupos de formulário */
 .form-group {
   margin-bottom: 15px;
-  padding-right: 20px;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
   color: #00796b;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid #00796b;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .form-group input:focus {
   border-color: #004d40;
   outline: none;
+  box-shadow: 0 0 6px rgba(0, 125, 109, 0.5);
 }
 
+/* Botões */
 .form-group button {
-  width: 110%;
-  padding: 10px;
+  width: 100%;
+  padding: 14px;
   background-color: #4440E7;
   color: white;
   border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, color 0.3s ease-in-out;
+  margin-top: 10px;
 }
 
 .form-group button:hover {
-  background-color: #004d40;
+  background-color: #3b36d1;
+  transform: translateY(-2px);
+  color: gold;
 }
 
 .form-group .cancel {
@@ -67,8 +116,10 @@ body {
 
 .form-group .cancel:hover {
   background-color: #C0392B;
+  color: gold;
 }
 
+/* Lista de pacientes */
 .pacientes-list {
   margin-top: 30px;
   width: 400px;
@@ -76,27 +127,40 @@ body {
 
 .paciente-item {
   background-color: #f4f4f4;
-  padding: 10px;
+  padding: 15px 10px;
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.paciente-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .paciente-item button {
   background-color: #E74C3C;
   border: none;
   color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .paciente-item button:hover {
   background-color: #C0392B;
 }
 
+/* Estilo da imagem */
 img {
-  margin-left: 35%;
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
 }
